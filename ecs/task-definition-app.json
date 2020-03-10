@@ -1,0 +1,26 @@
+[
+  {
+    "name": "dates-calculator",
+    "image": "796202935654.dkr.ecr.us-east-1.amazonaws.com/uno:latest",
+    "cpu": 10,
+    "memory": 512,
+    "essential": true,
+    "portMappings": [
+      {
+        "containerPort": 8080,
+        "hostPort": 80
+      }
+    ],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "awslogs-calculator",
+        "awslogs-region": "us-east-1",
+        "awslogs-stream-prefix": "awslogs-uno-calculator"
+      }
+    },
+    "environment" : [
+      { "name" : "SPRING_PROFILES_ACTIVE", "value" : "prod"}
+    ]
+  }
+]
